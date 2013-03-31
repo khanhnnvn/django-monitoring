@@ -1,7 +1,7 @@
-from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.utils import timezone
 from django.conf import settings
 from monitoring.models import Log
 
@@ -65,5 +65,5 @@ def dashboard(request):
     context['warning_msgs'] = Log.objects.filter(level='WARNING')[:2]
     context['info_msgs'] = Log.objects.filter(level='INFO')[:2]
 
-    context['time_checked'] = datetime.now()
+    context['time_checked'] = timezone.now()
     return render_to_response('monitoring/dashboard.html', context, RequestContext(request))

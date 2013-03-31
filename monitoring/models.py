@@ -1,5 +1,6 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
 from django.db import models
+from django.utils import timezone
 
 RECENT = timedelta(days=1)
 
@@ -13,6 +14,6 @@ class Log(models.Model):
         ordering = ['-datetime']
 
     def recent(self):
-        now = datetime.now()
+        now = timezone.now()
         recent = self.datetime > (now - RECENT) 
         return recent
