@@ -11,9 +11,6 @@ def dashboard(request):
     """
     Build page providing information about the state of the system.
     """
-    import django
-    import reversion
-    import markdown
     import os
     from subprocess import Popen, PIPE
 
@@ -22,6 +19,7 @@ def dashboard(request):
         ('hostname', 'hostname'),
         ('gitversion', 'git log -n 1'),
         ('mysql_version', 'mysql --version'),
+        ('python_packages', 'pip freeze'),
     ]
 
     # Flags in settings: Their expected  and actual values.
@@ -43,10 +41,6 @@ def dashboard(request):
     context = {}
 
     # Versions
-    context['django_version'] = '.'.join(str(i) for i in django.VERSION)
-    context['markdown_version'] = '.'.join(str(i) for i in markdown.version_info)
-    context['reversion_version'] = '.'.join(str(i) for i in reversion.VERSION)
-
     curr_dir = os.path.realpath(os.path.dirname(__file__))
     for name, shell_command in SHELL_COMMANDS:
         context[name] = run_shell_command(shell_command, curr_dir)

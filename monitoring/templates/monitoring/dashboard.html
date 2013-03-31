@@ -15,7 +15,7 @@
 
 {% block content %}
     <h1>Status <span style="font-size: small;">at {{ time_checked|date:"Y-m-d H:i"}}</span></h1>
-    <div style="width:47%;float:left">
+    <div style="width: 47%; float: left; padding-bottom: 1em; word-wrap: break-word;">
         {% if hostname %}<p><strong>Hostname:</strong> {{ hostname }}</p>{% endif %}
         <h2>Settings Flags</h2>
         {% for flag in settings_flags %}
@@ -24,9 +24,9 @@
             </span> &ensp;
         {% endfor %}
         <h2>Version Information</h2>
-        {% if django_version %}<p><strong>Django:</strong> {{ django_version }}</p>{% endif %}
-        {% if markdown_version %}<p><strong>Python-Markdown:</strong> {{ markdown_version }}</p>{% endif %}
-        {% if reversion_version %}<p><strong>Django-Reversion:</strong> {{ reversion_version }}</p>{% endif %}
+        {% if python_packages %}
+            <p><strong>Python Packages:</strong> {{ python_packages }}</p>
+        {% endif %}
         {% if mysql_version %}<p><strong>MySQL:</strong> {{ mysql_version }}</p>{% endif %}
         {% if gitversion %}
             <strong>Most Recent Commit:</strong><br>
@@ -35,7 +35,7 @@
             </div>
         {% endif %}
     </div>
-    <div style="width:47%;float:left;padding-left:1em;">
+    <div style="width:47%; float:left; padding-left: 1em;">
         <h2>Recent Log Entries</h2>
         {% if error_msgs %}
             <h3>Errors</h3>
