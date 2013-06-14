@@ -5,7 +5,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.markdown')).read()
 
 setup(
     name = 'django-monitoring',
-    version = '1.0.0',
+    version = '1.1.0',
     packages = ['monitoring'],
     include_package_data = True,
     license = 'BSD License',

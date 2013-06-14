@@ -4,7 +4,6 @@ from django.template import RequestContext
 from django.utils import timezone
 from django.conf import settings
 from monitoring.models import Log
-import settings as settings_module
 
 
 @login_required
@@ -42,9 +41,9 @@ def dashboard(request):
     context = {}
 
     # Versions
-    proj_dir = os.path.realpath(os.path.dirname(settings_module.__file__))
+    cwd = os.path.dirname(os.path.realpath(__file__))
     for name, shell_command in SHELL_COMMANDS:
-        context[name] = run_shell_command(shell_command, proj_dir)
+        context[name] = run_shell_command(shell_command, cwd)
 
     # Settings Flags
     context['settings_flags'] = []
@@ -61,4 +60,6 @@ def dashboard(request):
     context['info_msgs'] = Log.objects.filter(level='INFO')[:2]
 
     context['time_checked'] = timezone.now()
-    return render_to_response('monitoring/dashboard.html', context, RequestContext(request))
+    return render_to_response('monitoring/dashboard.html',
+                              context,
+                              RequestContext(request))
