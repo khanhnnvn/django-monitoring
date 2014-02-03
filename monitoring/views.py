@@ -41,7 +41,7 @@ def dashboard(request):
     context = {}
 
     # Versions
-    cwd = os.path.dirname(os.path.realpath(__file__))
+    cwd = settings.PROJECT_PATH
     for name, shell_command in SHELL_COMMANDS:
         context[name] = run_shell_command(shell_command, cwd)
 

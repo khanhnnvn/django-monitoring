@@ -5,7 +5,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.markdown')).read()
 
 setup(
     name = 'django-monitoring',
-    version = '1.1.2',
+    version = '1.1.3',
     packages = ['monitoring'],
     include_package_data = True,
     license = 'BSD License',
@@ -27,6 +27,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires=[
-		'Django>=1.5.4',
+		'Django>=1.6.1',
     ],
 )

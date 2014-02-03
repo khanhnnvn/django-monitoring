@@ -2,7 +2,7 @@
 Monitoring
 ==========
 
-Monitoring is a Django 1.5 app which adds logging and a dashboard to a
+Monitoring is a Django 1.6 app which adds logging and a dashboard to a
 Django project.
 
 Features
@@ -71,4 +71,4 @@ Quick start
 Dependencies
 ------------
 
-* [Django 1.5.4](https://pypi.python.org/pypi/Django/1.5.4)
+* [Django 1.6.1](https://pypi.python.org/pypi/Django/1.6.1)
