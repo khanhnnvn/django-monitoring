@@ -22,18 +22,23 @@ Usage
  * The third parameter is the name of a Django model. If present then only that model
    is checked.
 """
+from __future__ import absolute_import
+
+import MySQLdb
+
 from django.contrib.contenttypes.models import ContentType
 from django.db import connection as db_connection
-from django.db.models.fields import AutoField, BigIntegerField, BooleanField, CharField,\
-    CommaSeparatedIntegerField, DateField, DateTimeField, DecimalField,\
-    EmailField, FilePathField, FloatField, IPAddressField, IntegerField,\
-    NullBooleanField, PositiveIntegerField, PositiveSmallIntegerField,\
-    SlugField, SmallIntegerField, TextField, TimeField, URLField
+from django.db.models.fields import (AutoField, BigIntegerField, BooleanField, CharField,
+                                     CommaSeparatedIntegerField, DateField, DateTimeField, 
+                                     DecimalField, EmailField, FilePathField, FloatField, 
+                                     IPAddressField, IntegerField, NullBooleanField, 
+                                     PositiveIntegerField, PositiveSmallIntegerField,
+                                     SlugField, SmallIntegerField, TextField, TimeField, 
+                                     URLField)
 from django.db.models.fields.files import FileField, ImageField
 from django.db.models.fields.related import ForeignKey, ManyToManyField, OneToOneField
 from django.core.management.base import BaseCommand
 from django.conf import settings
-import MySQLdb
 
 FIELD_TYPES_CHECKED = [
     AutoField, BigIntegerField, BooleanField, CharField,

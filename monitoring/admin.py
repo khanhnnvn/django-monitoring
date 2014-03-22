@@ -1,5 +1,7 @@
+from __future__ import absolute_import
+
 from django.contrib import admin
-from monitoring.models import Log
+from .models import Log
 
 
 class LogAdmin(admin.ModelAdmin):

@@ -1,9 +1,12 @@
+from __future__ import absolute_import
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import timezone
 from django.conf import settings
-from monitoring.models import Log
+
+from .models import Log
 
 
 @login_required
@@ -18,7 +21,7 @@ def dashboard(request):
     SHELL_COMMANDS = [
         ('hostname', 'hostname'),
         ('gitversion', 'git log -n 1'),
-        ('mysql_version', 'mysql --version'),
+        ('postgresql_version', 'psql --version'),
         ('python_packages', 'pip freeze'),
     ]
 
@@ -41,7 +44,7 @@ def dashboard(request):
     context = {}
 
     # Versions
-    cwd = settings.PROJECT_PATH
+    cwd = settings.DJANGO_ROOT
     for name, shell_command in SHELL_COMMANDS:
         context[name] = run_shell_command(shell_command, cwd)
 
