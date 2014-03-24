@@ -60,6 +60,6 @@
 {% endblock %}
 
 {% block footer %}
-    <a href="/admin/monitoring/log/">All Logs</a>
-    <a href="/accounts/logout">Logout</a>
+    <a href="{% url 'admin:monitoring_log_changelist' %}">All Logs</a>
+    <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}
