@@ -17,7 +17,6 @@ from .models import Log
 SHELL_COMMANDS = [
     ('hostname', 'hostname'),
     ('gitversion', 'git log -n 1'),
-    ('postgresql_version', 'psql --version'),
     ('python_packages', 'pip freeze'),
 ]
 

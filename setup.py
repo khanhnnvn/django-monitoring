@@ -4,8 +4,8 @@ from setuptools import setup
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(
-    name = 'django-monitoring',
-    version = '1.2.0',
+    name = 'django-monitoring-ahernp',
+    version = '0.5.0',
     packages = ['monitoring'],
     include_package_data = True,
     license = 'BSD License',
@@ -27,6 +27,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires=[
-		'Django==1.6.2',
+        'Django==1.6.2',
+        'django-braces==1.4.0',
     ],
 )

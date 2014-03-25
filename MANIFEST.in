@@ -1,4 +1,4 @@
 include LICENSE
-include README.markdown
+include README.rst
 recursive-include monitoring/templates *
-recursive-include monitoring/management *
+
