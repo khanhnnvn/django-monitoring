@@ -17,7 +17,7 @@ Features
 Quick start
 -----------
 
-1. Add "monitoring" to your INSTALLED\_APPS settings.
+1. Add "monitoring" to your ``INSTALLED_APPS`` settings.
 
 2. Include the monitoring URLconf in your project urls.py like this::
 
@@ -34,8 +34,8 @@ Quick start
      DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
 6. Start the development server and visit
-   http://127.0.0.1:8000/monitoring/dashboard/ to see summary
-   information about the state of the project.
+   `/monitoring/dashboard/ <http://127.0.0.1:8000/monitoring/dashboard/>`__
+   to see summary information about the state of the project.
 
 7. Add model-based logging for [appname] to settings.py with::
 

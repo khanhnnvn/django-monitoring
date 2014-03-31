@@ -2,11 +2,11 @@
 *.py[co]
 
 # Packaging files:
-dist
 *.egg*
+dist
 
 # Sphinx docs:
-build
+_build
 
 # SQLite3 database files:
 *.db

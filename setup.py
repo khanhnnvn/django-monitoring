@@ -1,11 +1,14 @@
 import os
 from setuptools import setup
 
+import monitoring
+
+version = monitoring.__version__
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(
     name = 'django-monitoring-ahernp',
-    version = '0.5.0',
+    version = version,
     packages = ['monitoring'],
     include_package_data = True,
     license = 'BSD License',
