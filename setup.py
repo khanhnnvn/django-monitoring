@@ -32,5 +32,6 @@ setup(
     install_requires=[
         'Django==1.6.2',
         'django-braces==1.4.0',
+        'factory-boy==2.3.1',
     ],
 )
