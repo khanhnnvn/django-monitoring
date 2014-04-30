@@ -3,6 +3,11 @@
 History
 -------
 
+1.0.2 (2014-04-30)
+++++++++++++++++++
+
+* Create test data using factory_boy factories instead of fixtures.
+
 1.0.1 (2014-03-30)
 ++++++++++++++++++
 

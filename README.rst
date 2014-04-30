@@ -72,4 +72,4 @@ Dependencies
 
 -  `Django 1.6.2 <https://pypi.python.org/pypi/Django/1.6.2>`__
 -  `django-braces 1.4.0 <https://pypi.python.org/pypi/django-braces/1.4.0>`__
-
+-  `factory_boy 2.3.1 <https://pypi.python.org/pypi/factory_boy/2.3.1>`__
