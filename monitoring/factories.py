@@ -19,7 +19,7 @@ LEVEL_LIST = ['INFO', 'WARNING', 'ERROR']
 class UserFactory(factory.DjangoModelFactory):
     FACTORY_FOR = user_model
 
-    username = factory.Sequence(lambda n: 'testuser{0}'.format(n))
+    username = factory.Sequence(lambda n: 'testuser {0}'.format(n))
 
 
 class LogEntryFactory(factory.DjangoModelFactory):
