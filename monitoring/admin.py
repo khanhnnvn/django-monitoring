@@ -27,9 +27,7 @@ from django.core.urlresolvers import reverse
 class LogEntryAdmin(admin.ModelAdmin):
     date_hierarchy = 'action_time'
 
-    readonly_fields = ['action_time', 'user', 'content_type', 'object_id',
-                       'object_repr', 'action_flag', 'change_message',
-                       'object_link', 'action_description']
+    readonly_fields = [f.name for f in LogEntry._meta.fields] + ['object_link', 'action_description']
 
     list_filter = ['user', 'content_type', 'action_flag']
 
