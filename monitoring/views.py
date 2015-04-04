@@ -3,10 +3,10 @@ from __future__ import absolute_import
 import os
 from subprocess import Popen, PIPE
 
+from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import timezone
-from django.conf import settings
 from django.views.generic import TemplateView
 
 from braces.views import LoginRequiredMixin
@@ -45,7 +45,7 @@ class Dashboard(LoginRequiredMixin, TemplateView):
     template_name = 'monitoring/dashboard.html'
 
     def get(self, request, *args, **kwargs):
-        context = {}
+        context = {'logout_url': settings.LOGOUT_URL}
 
         # Versions
         cwd = settings.DJANGO_ROOT

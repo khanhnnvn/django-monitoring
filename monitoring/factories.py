@@ -17,13 +17,17 @@ ACTION_LIST = [ADDITION, CHANGE, DELETION]
 LEVEL_LIST = ['INFO', 'WARNING', 'ERROR']
 
 class UserFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = user_model
+    class Meta:
+        model = user_model
+        abstract = False
 
     username = factory.Sequence(lambda n: 'testuser {0}'.format(n))
 
 
 class LogEntryFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = LogEntry
+    class Meta:
+        model = LogEntry
+        abstract = False
 
     user = factory.SubFactory(UserFactory)
     object_id = factory.SelfAttribute('user.id')
@@ -32,7 +36,9 @@ class LogEntryFactory(factory.DjangoModelFactory):
     change_message = factory.Sequence(lambda n: 'Test Change {0}'.format(n))
 
 class LogFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = Log
+    class Meta:
+        model = Log
+        abstract = False
 
     level = factory.Sequence(lambda n: LEVEL_LIST [n % len(LEVEL_LIST)])
     msg = factory.Sequence(lambda n: 'Log Message {0}'.format(n))
