@@ -18,5 +18,5 @@ class Log(models.Model):
 
     def recent(self):
         now = timezone.now()
-        recent = self.datetime > (now - RECENT) 
+        recent = self.datetime > (now - RECENT)
         return recent

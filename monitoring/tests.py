@@ -32,8 +32,8 @@ class WorkingURLsTest(TestCase):
             LogFactory.create()
 
         self.user = user_model.objects.create_user('john',
-                                                         'john@montypython.com',
-                                                         'password')
+                                                   'john@montypython.com',
+                                                   'password')
         self.user.is_staff = True
         self.user.is_superuser = True
         self.user.save()
@@ -47,7 +47,7 @@ class WorkingURLsTest(TestCase):
             self.assertEqual(response.status_code,
                              status_code,
                              'URL %s: Unexpected status code, got %s expected %s' %
-                                (url, response.status_code, status_code))
+                             (url, response.status_code, status_code))
             if response.status_code == 200:
                 self.assertContains(response,
                                     expected_text,

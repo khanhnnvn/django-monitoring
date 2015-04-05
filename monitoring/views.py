@@ -1,11 +1,8 @@
 from __future__ import absolute_import
 
-import os
 from subprocess import Popen, PIPE
 
 from django.conf import settings
-from django.shortcuts import render_to_response
-from django.template import RequestContext
 from django.utils import timezone
 from django.views.generic import TemplateView
 

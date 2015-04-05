@@ -13,10 +13,11 @@ class LogAdmin(admin.ModelAdmin):
         (None, {
             'fields': (('level', 'datetime',),
                        ('msg',),
-                       )
+            )
         }),
     )
-    
+
+
 admin.site.register(Log, LogAdmin)
 
 from django.contrib.admin.models import LogEntry, ADDITION, CHANGE, DELETION
@@ -56,6 +57,7 @@ class LogEntryAdmin(admin.ModelAdmin):
                 escape(obj.object_repr),
             )
         return link
+
     object_link.allow_tags = True
     object_link.admin_order_field = 'object_repr'
     object_link.short_description = u'object'
@@ -67,6 +69,8 @@ class LogEntryAdmin(admin.ModelAdmin):
             CHANGE: 'Change',
         }
         return action_names[obj.action_flag]
+
     action_description.short_description = 'Action'
+
 
 admin.site.register(LogEntry, LogEntryAdmin)
