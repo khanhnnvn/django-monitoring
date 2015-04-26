@@ -3,6 +3,16 @@
 History
 -------
 
+1.1.2 (2015-04-05)
+++++++++++++++++++
+
+* Added management commands to manifest.
+
+1.1.1 (2015-04-05)
+++++++++++++++++++
+
+* Added delete_logs command.
+
 1.1.0 (2015-04-03)
 ++++++++++++++++++
 
