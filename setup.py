@@ -30,8 +30,8 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires=[
-        'Django==1.8',
-        'django-braces==1.4.0',
-        'factory-boy==2.5.1',
+        'Django==1.9.1',
+        'django-braces==1.8.1',
+        'factory-boy==2.6.0',
     ],
 )

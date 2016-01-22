@@ -1,7 +1,7 @@
 Monitoring
 ==========
 
-Monitoring is a Django 1.8 app which adds logging and a dashboard to a
+Monitoring is a Django 1.9 app which adds logging and a dashboard to a
 Django project.
 
 Features
@@ -70,6 +70,6 @@ Quick start
 Dependencies
 ------------
 
--  `Django 1.8 <https://pypi.python.org/pypi/Django/1.8>`__
--  `django-braces 1.4.0 <https://pypi.python.org/pypi/django-braces/1.4.0>`__
--  `factory_boy 2.5.1 <https://pypi.python.org/pypi/factory_boy/2.5.1>`__
+-  `Django 1.9.1 <https://pypi.python.org/pypi/Django/1.9.1>`__
+-  `django-braces 1.8.1 <https://pypi.python.org/pypi/django-braces/1.8.1>`__
+-  `factory_boy 2.6.0 <https://pypi.python.org/pypi/factory_boy/2.6.0>`__
