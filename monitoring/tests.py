@@ -12,7 +12,7 @@ TEST_URLS = [
     # (url, status_code, text_on_page)
     ('/monitoring/dashboard/', 200, 'Version Information'),
     ('/admin/admin/logentry/', 200, 'Select log entry to change'),
-    ('/admin/admin/logentry/1/', 200, 'Change log entry'),
+    ('/admin/admin/logentry/1/change/', 200, 'Change log entry'),
     ('/admin/admin/logentry/1/delete/', 403, '403 Forbidden'),
 ]
 
